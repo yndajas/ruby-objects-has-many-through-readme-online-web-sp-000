@@ -15,12 +15,10 @@ class Customer
  
   def meals
     Meal.all.select {|meal|meal.customer == self}
-    end
   end
  
   def waiters
     meals.collect {|meal|meal.waiter}
-    end
   end
  
   def new_meal(waiter, total, tip=0)
